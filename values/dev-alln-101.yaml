@@ -1,6 +1,6 @@
 nginx:
   name: monitoring-dev-alln-101
-  replicaCount: 8
+  replicaCount: 2
 
 service:
   name: dev-alln-101
