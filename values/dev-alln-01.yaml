@@ -4,3 +4,5 @@ nginx:
 serviceAccount:
   create: true
   name: "monitoring-dev-alln-01-sa"
+service:
+  name: "dev-alln-01"
