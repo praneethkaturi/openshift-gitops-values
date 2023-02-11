@@ -1,0 +1,20 @@
+nginx:
+  name: monitoring-default
+  replicaCount: 2
+
+image:
+  repository: containers.cisco.com/prkaturi/nginx
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: "monitoring-sa"
+
+service:
+  type: ClusterIP
+  port: 80

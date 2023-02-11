@@ -1,0 +1,7 @@
+nginx:
+  replicaCount: 5
+
+serviceAccount:
+  create: false
+
+

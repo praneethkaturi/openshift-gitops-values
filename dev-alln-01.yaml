@@ -1,0 +1,6 @@
+nginx:
+  name: monitoring-dev-alln-01
+  replicaCount: 1
+serviceAccount:
+  create: true
+  name: "monitoring-dev-alln-01-sa"
