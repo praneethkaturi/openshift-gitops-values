@@ -3,7 +3,7 @@ nginx:
   replicaCount: 2
 
 image:
-  repository: containers.cisco.com/prkaturi/nginx
+  repository: nginx
   pullPolicy: IfNotPresent
   tag: "latest"
 
