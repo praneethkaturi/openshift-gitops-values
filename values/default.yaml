@@ -1,20 +1,25 @@
-nginx:
-  name: monitoring-default
-  replicaCount: 2
+helmChartOne: 
+  nginx:
+    replicaCount: 4
+    name: presync
 
-image:
-  repository: nginx
-  pullPolicy: IfNotPresent
-  tag: "latest"
+  presync:
+      jobName: presync-monitoring
 
-nameOverride: ""
-fullnameOverride: ""
+  image:
+    repository: nginx
+    pullPolicy: IfNotPresent
+    tag: "latest"
 
-serviceAccount:
-  create: true
-  annotations: {}
-  name: "monitoring-sa"
+  nameOverride: ""
+  fullnameOverride: ""
 
-service:
-  type: ClusterIP
-  port: 80
+  serviceAccount:
+    create: true
+    annotations: {}
+    name: ""
+
+  service:
+    type: ClusterIP
+    port: 80
+    name: dummy
