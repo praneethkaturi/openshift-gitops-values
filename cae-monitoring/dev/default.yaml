@@ -1,0 +1,52 @@
+helmChartOne: 
+  nginx:
+    replicaCount: 4
+    name: presync
+
+  presync:
+      jobName: presync-monitoring
+
+  image:
+    repository: nginx
+    pullPolicy: IfNotPresent
+    tag: "latest"
+
+  nameOverride: ""
+  fullnameOverride: ""
+
+  serviceAccount:
+    create: true
+    annotations: {}
+    name: ""
+
+  service:
+    type: ClusterIP
+    port: 80
+    name: dummy
+
+helmChartTwo: 
+  nginx:
+    replicaCount: 4
+    name: presync
+
+  presync:
+      jobName: presync-monitoring
+
+  image:
+    repository: nginx
+    pullPolicy: IfNotPresent
+    tag: "latest"
+
+  nameOverride: ""
+  fullnameOverride: ""
+
+  serviceAccount:
+    create: true
+    annotations: {}
+    name: ""
+
+  service:
+    type: ClusterIP
+    port: 80
+    name: dummy
+

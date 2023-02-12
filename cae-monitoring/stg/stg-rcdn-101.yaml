@@ -1,0 +1,7 @@
+helmChartOne: 
+  nginx:
+    name: monitoring-dev-alln-101
+    replicaCount: 10
+
+  service:
+    name: dev-alln-101
