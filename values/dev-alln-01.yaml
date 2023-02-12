@@ -1,9 +1,19 @@
 helmChartOne: 
   nginx:
-    name: monitoring-dev-alln-01
+    name: helm-one-dev-alln-01
     replicaCount: 1
   serviceAccount:
     create: true
     name: "monitoring-dev-alln-01-sa"
   service:
-    name: "dev-alln-01"
+    name: "service-one-dev-alln-01"
+
+helmChartTwo: 
+  nginx:
+    name: helm-two-dev-alln-01
+    replicaCount: 5
+  serviceAccount:
+    create: false
+    name: "monitoring-dev-alln-01-sa"
+  service:
+    name: "service-two-dev-alln-01"
