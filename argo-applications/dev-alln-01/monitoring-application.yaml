@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-multi-helm
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/refresh: hard
+spec:
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd-test
+  sources:
+    - ref: values
+      repoURL: https://github.com/praneethkaturi/openshift-gitops-values.git
+      targetRevision: HEAD
+      
+    - path: nginx/
+      repoURL: 'https://github.com/praneethkaturi/nginx-helm.git'
+      targetRevision: HEAD
+      helm:
+        valueFiles:
+        - $values/cae-config/cae-monitoring/env.yaml
+        - $values/cae-config/cae-monitoring/dev/default.yaml
+        - $values/cae-config/cae-monitoring/dev/dev-alln-01.yaml
+
+    - path: nginx/
+      repoURL: 'https://github.com/praneethkaturi/nginx-helm-2.git'
+      targetRevision: HEAD
+      helm:
+        valueFiles:
+        - $values/cae-config/cae-monitoring/env.yaml
+        - $values/cae-config/cae-monitoring/dev/default.yaml
+        - $values/cae-config/cae-monitoring/dev/dev-alln-01.yaml
