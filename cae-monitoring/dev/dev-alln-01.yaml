@@ -11,7 +11,7 @@ helmChartOne:
 helmChartTwo: 
   nginx:
     name: helm-two-dev-alln-01
-    replicaCount: 5
+    replicaCount: 10
   serviceAccount:
     create: false
     name: "monitoring-dev-alln-01-sa"
