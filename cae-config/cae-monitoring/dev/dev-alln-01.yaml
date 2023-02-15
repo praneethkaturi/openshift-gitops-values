@@ -7,6 +7,8 @@ helmChartOne:
     name: "monitoring-dev-alln-01-sa"
   service:
     name: "service-one-dev-alln-01"
+  image:
+    tag: "1.22.1"
 
 helmChartTwo: 
   nginx:
@@ -15,5 +17,3 @@ helmChartTwo:
   serviceAccount:
     create: false
     name: "monitoring-dev-alln-01-sa"
-  service:
-    name: "service-two-dev-alln-01"

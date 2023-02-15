@@ -1,7 +1,8 @@
-nginx:
-  replicaCount: 5
+helmChartTwo: 
+  nginx:
+    replicaCount: 5
 
-serviceAccount:
-  create: false
+  serviceAccount: 
+    create: false
 
 

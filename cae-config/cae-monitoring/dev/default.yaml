@@ -1,3 +1,4 @@
+## Config for monitoring helm-chart-one
 helmChartOne: 
   nginx:
     replicaCount: 4
@@ -24,6 +25,7 @@ helmChartOne:
     port: 80
     name: dummy
 
+## Config for monitoring helm-chart-two
 helmChartTwo: 
   nginx:
     replicaCount: 4

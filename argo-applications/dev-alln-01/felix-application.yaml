@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx-multi-helm
+  name: felix-application
   namespace: argocd
   labels:
     argocd.argoproj.io/refresh: hard
@@ -26,15 +26,15 @@ spec:
       targetRevision: HEAD
       helm:
         valueFiles:
-        - $values/cae-config/cae-monitoring/env.yaml
-        - $values/cae-config/cae-monitoring/dev/default.yaml
-        - $values/cae-config/cae-monitoring/dev/dev-alln-01.yaml
+        - $values/cae-config/cae-felix/env.yaml
+        - $values/cae-config/cae-felix/dev/default.yaml
+        - $values/cae-config/cae-felix/dev/dev-alln-01.yaml
 
-    - path: nginx/
-      repoURL: <felix-helm-chart>
-      targetRevision: HEAD
+    - chart: monitoring
+      repoURL: repo-art.cisco.com/
+      targetRevision: 1.0.4
       helm:
         valueFiles:
-        - $values/cae-config/cae-monitoring/env.yaml
-        - $values/cae-config/cae-monitoring/dev/default.yaml
-        - $values/cae-config/cae-monitoring/dev/dev-alln-01.yaml
+        - $values/cae-config/cae-felix/env.yaml
+        - $values/cae-config/cae-felix/dev/default.yaml
+        - $values/cae-config/cae-felix/dev/dev-alln-01.yaml
